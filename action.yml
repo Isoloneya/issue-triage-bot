@@ -1,0 +1,21 @@
+name: Issue Triage Bot
+description: Labels new issues, asks for missing bug details, welcomes first-time contributors and closes stale issues
+branding:
+  icon: tag
+  color: blue
+inputs:
+  token:
+    description: Token with issues and pull-requests write access
+    required: false
+    default: ${{ github.token }}
+  config-path:
+    description: Path to the configuration file in the repository
+    required: false
+    default: .github/triage-bot.yml
+  dry-run:
+    description: Log the planned actions without performing them
+    required: false
+    default: 'false'
+runs:
+  using: node20
+  main: src/index.js

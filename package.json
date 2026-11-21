@@ -1,0 +1,19 @@
+{
+  "name": "issue-triage-bot",
+  "version": "1.0.0",
+  "description": "GitHub Action that labels new issues, asks for missing bug details, welcomes first-time contributors and closes stale issues",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "github-action",
+    "issues",
+    "triage",
+    "bot"
+  ],
+  "license": "MIT"
+}

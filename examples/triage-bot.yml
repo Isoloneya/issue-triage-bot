@@ -1,0 +1,47 @@
+needsInfoLabel: needs-info
+staleLabel: stale
+
+labels:
+  bug: [crash, exception, error, broken, regression, stack trace, not working, "doesn't work", does not work, fails]
+  enhancement: [feature request, please add, would be nice, would be great, enhancement, support for, proposal]
+  question: [how to, how do i, how can i, is it possible, question]
+  documentation: [docs, documentation, typo, readme]
+
+autoLabel:
+  enabled: true
+  onlyIfUnlabeled: true
+
+bugReport:
+  enabled: true
+  label: bug
+  clearOnAuthorReply: true
+  requirements:
+    steps:
+      description: Steps to reproduce the problem
+      match: [steps to reproduce, how to reproduce, reproduce, repro, step 1, 're:^\s*1[.)]\s']
+    environment:
+      description: Your version and environment (OS, runtime, browser)
+      match: [version, environment, operating system, 'os:', windows, macos, linux, ubuntu, android, ios, chrome, firefox, safari, 're:\bv?\d+\.\d+']
+  message: |
+    Thanks for the report, @{author}! To help me investigate, please add the missing details:
+
+    {missing}
+
+    I added the `{needsInfoLabel}` label. It is removed automatically as soon as you reply.
+
+welcome:
+  enabled: true
+  issueMessage: "Welcome, @{author}, and thanks for opening your first issue here! {contributing}"
+  pullRequestMessage: |
+    Welcome, @{author}, and thanks for your first pull request! {contributing}
+
+    A maintainer will review it soon.
+  contributingText: "Please take a look at the [contributing guide]({url}) before you get started."
+
+stale:
+  enabled: true
+  remindAfterDays: 14
+  closeAfterDays: 30
+  closeReason: not_planned
+  remindMessage: "Hi @{author}, this issue has been waiting for more information for {days} days. If it is still relevant, please reply with the details and I will remove the `{label}` label. Otherwise it will be closed automatically in {daysLeft} days."
+  closeMessage: "Closing this issue because the requested information was not provided within {days} days. Feel free to reopen it with the missing details."
